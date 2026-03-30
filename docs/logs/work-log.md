@@ -38,11 +38,24 @@
 - Translated the user's favorite reference feelings into Hollow-specific emotional targets instead of treating those works as structures to imitate.
 - Chose the first control format: real-time oblique action with Focus, Relay Lantern carrying, deliberate misarrival reward, and a 20-minute slice flow.
 - Wrote the first prototype-ready spec: starting tuning values, a fully playable Yun wrong-home setpiece, and a Godot scene breakdown for the slice.
+- Built the first Godot implementation scaffold: project file, core scenes, state and route scripts, first slice world scene, and a playable wrong-home phase controller skeleton.
+- Validated the newly created `.gd` and `.tscn` files with the editor diagnostics; no file-level errors were reported.
+- Could not launch the project from the shell because no Godot executable is currently available in PATH.
+- Validated the project against the user-provided Godot 4.6.1 executable; headless editor load completed successfully and the main scene could be started headlessly without immediate reported runtime errors.
+- Fixed obvious first-use problems after user feedback: the player now starts with a live camera, the scene has visible landing shapes, controls are shown on screen, and Q/E/F actions produce persistent readable feedback instead of appearing to do nothing.
+- Locked the project to a pure 2D early-production lane instead of leaving 2.5D or 3D as an open implementation temptation.
+- Replaced the player-follow camera with a fixed slice camera and clamped movement to authored route lanes so the prototype stops feeling like an unframed sandbox.
+- Implemented the changed revisit as three distinct return states: lawful is the easiest public walk back, wrong home now requires refreshing a Wrong Light echo before crossing the ward, and broken middle now forces an in-ward Knot to restitch the center long enough to pass.
+- Revalidated the updated slice in Godot 4.6.1 headless editor mode; no new scene or script load errors were reported.
+- Added dynamic world guidance instead of more camera tricks: the route glow now rewrites itself to the current goal, target labels pulse in-world, and revisit branches visually point to Start, Wrong Light, or the center fracture.
+- Tuned failure readability during revisit by giving each outcome its own route-loss grace window and its own reset explanation, so failure teaches the branch rule instead of looking like a generic reset.
+- Added a root `.gitignore` for `.godot/` and `*.import`, then verified through Git status that generated editor artifacts are being ignored.
 
 ### Next
 - Tune Focus, Quick-Step, and Split Recovery into prototype-safe values.
-- Script the first wrong-home setpiece and changed revisit state.
+- Tune the three changed-revisit branches so each one is readable on the first attempt and recoverable on failure.
 - Turn the Godot scene breakdown into an actual folder and scene creation order when implementation starts.
+- Launch and iterate the prototype once a Godot executable is available in the environment.
 - Turn the first arc into a reusable 3-to-4-hour chapter template that can scale without filler.
 - Turn the five cast seeds into bond maps and scene-specific secrets.
 - Lock the first gameplay scene breakdown from Lune's POV.

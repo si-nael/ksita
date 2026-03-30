@@ -10,7 +10,7 @@ Supporting prototype documents:
 
 ## Chosen Prototype Format
 - Fully real-time movement.
-- 2D oblique action view with authored camera framing.
+- Pure 2D oblique action view with authored camera framing.
 - Short focus-hold state instead of full pause planning.
 - Small action set with high contextual density.
 
@@ -18,7 +18,7 @@ Supporting prototype documents:
 - Real-time crossing preserves tension, style, and music-play synchronization.
 - A focus-hold layer lets the player read route truth without turning the game into a turn-based tactics screen.
 - An oblique 2D view keeps silhouettes strong while still showing witness lines, piers, bells, and upside-down spatial drama.
-- The game stays readable and prototypeable in Godot without needing full 3D camera complexity.
+- The game stays readable and prototypeable in Godot without any 3D camera or 2.5D staging overhead.
 
 ## Camera Rule
 The camera should not behave like a fully free exploration camera.

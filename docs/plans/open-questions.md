@@ -4,7 +4,7 @@
 - World selection is complete. Future questions should deepen the Hollow rather than reopen generic alternatives.
 
 ## Must Decide Before Prototyping
-- Is the final presentation 2D top-down, side-view, or 2.5D hybrid?
+- Which pure 2D presentation lane is strongest: oblique top-down, side-view, or chapter-specific switching between the two?
 - How much should the player be able to predict relational changes before they happen?
 - Which first encounter type is the most immediately fun in under 30 seconds: crossing pressure, hostile witness pursuit, rescue carry, or wrong-home decision?
 - What bodily signs show that someone is losing anchoring?

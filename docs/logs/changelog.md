@@ -38,3 +38,13 @@
 - Added emotional-targets.md to translate reference feelings into Hollow-specific targets for music-gameplay catharsis, long-form tragedy, and elegant recontextualization.
 - Added control-and-slice.md to lock the first real-time control format, Relay Lantern mechanic, Frayed Bell Thread reward, and 20-minute slice flow.
 - Added prototype-tuning.md, yun-first-wrong-home-setpiece.md, and godot-prototype-structure.md so the first slice can move toward actual implementation.
+- Added the first actual Godot prototype scaffold at the repo root: project.godot, placeholder icon, reusable scenes, and core GDScript modules for player control, relay lantern state, route segments, slice state, setpiece direction, and world orchestration.
+- Validated that the scaffolded project loads successfully in Godot 4.6.1 using the provided Windows executable; editor-level headless loading completed without reported script or scene errors.
+- Improved first-playable usability: added a following Camera2D, clearer landing geometry, persistent control hints, and actual prototype feedback for Answer, Knot, and Cut so the slice is no longer a barely visible static sandbox.
+- Locked the production lane to pure 2D for the prototype and early content so 2.5D or 3D complexity does not slow iteration.
+- Replaced the player-follow camera with a fixed scene camera and constrained movement into authored 2D lanes so the first slice reads like a deliberate game space instead of a floating sandbox.
+- Implemented a real changed-revisit phase after the Returning setpiece: lawful return now grants an easier public walk home, wrong home requires refreshing Wrong Light and carrying its echo through the cold ward, and broken middle forces a fresh Knot to cross the center fracture.
+- Revalidated the updated slice controller and full project load in Godot 4.6.1; the editor-level headless load still completes without reported scene or script errors.
+- Added dynamic world guidance to the slice: route glow now rewrites itself per objective, active world markers pulse toward the current target, and revisit branches signal whether the player should head for Start, Wrong Light, or the center fracture.
+- Tuned revisit failure readability with branch-specific route-loss grace windows and failure text so lawful, wrong-home, and broken-middle resets explain what actually went wrong.
+- Added a root `.gitignore` and verified that generated Godot artifacts such as `.godot/` and `.import` files are ignored by Git status instead of polluting the working diff.

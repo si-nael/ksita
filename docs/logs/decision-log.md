@@ -198,8 +198,20 @@ The first playable will use fully real-time movement with a short focus-hold sta
 Reason:
 This format preserves urgency, lets music and play peak together, stays prototype-friendly in the current production direction, and is readable enough to teach witness law without turning the project into either a visual novel or a turn-based tactics game.
 
+## DEC-034 | 2026-03-30 | Readability Should Come From World Guidance, Not Camera Motion
+When the slice needs to be made clearer, the first move should be changing route glow, target markers, lane logic, and reset feedback before adding more camera behavior.
+
+Reason:
+The recent failures were not about visual spectacle. They were about not knowing where to go or why a branch failed. The fastest way to make the slice feel like a deliberate game is to teach the current route inside the space itself.
+
 ## DEC-034 | 2026-03-30 | Early Climax Choices Must Be Spatial, Not Menu-Driven
 The first wrong-home climax will be decided through movement, positioning, route maintenance, and a contextual Call action rather than through a detached dialogue choice menu.
 
 Reason:
 The project's emotional peaks need to remain playable. If Returning collapses into a dialogue picker at the decisive beat, the game will lose the very identity it is trying to prove.
+
+## DEC-035 | 2026-03-30 | Early Production Lane Is Pure 2D
+The prototype and early content production will stay in pure 2D. 2.5D and 3D are not in scope unless the route systems have already been proven fun and readable.
+
+Reason:
+The user explicitly prefers the simpler production lane if 3D becomes a drag. This project's current bottleneck is gameplay clarity, not depth rendering. Pure 2D keeps iteration faster and keeps silhouette, route state, and world readability stronger.

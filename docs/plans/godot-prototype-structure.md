@@ -15,12 +15,15 @@ This structure only covers the first playable proof:
 ## Project Principle
 Build the prototype around route state readability first.
 
+Keep the prototype pure 2D.
+
 Do not begin with:
 - full narrative framework
 - inventory sprawl
 - generalized combat
 - full save/load architecture
 - every future route authority
+- 3D environments, 2.5D camera tricks, or depth staging that is not required to prove the route systems
 
 ## Recommended Scene Breakdown
 
@@ -205,3 +208,5 @@ If a system is not needed to prove the first 20-minute slice, stub it or cut it 
 
 The prototype only needs enough architecture to answer one question clearly:
 is active witness crossing fun?
+
+That question should be answered in pure 2D before any 3D or 2.5D experiments are allowed.

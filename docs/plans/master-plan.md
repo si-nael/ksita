@@ -29,6 +29,7 @@ Emotional benchmark: playable catharsis, mythic long-form heartbreak, and elegan
 - The first major character-focused conflict should be built around Returning.
 - Death culminates in becoming Unkept, not simply in bodily stoppage.
 - Visual direction is 2D-first and non-photoreal; pixel or pastel are both acceptable, but realistic or generic 3D rendering is not.
+- Prototype and early production should stay in pure 2D; 2.5D or 3D experiments are out of scope until the route systems already work.
 - Lune is the first perspective anchor.
 - The first arc should feel seductive-tragic before it feels openly predatory.
 - The project should target roughly 20 to 30 hours for a first clear and 60 to 80 hours for full completion; extra hours must come from optionality, mastery, and replay rather than a bloated single route.
@@ -91,7 +92,7 @@ The first named seed set should be the five-character bundle defined in `first-c
 - Engine: Godot 4
 - Language: GDScript for early speed
 - Target: PC first
-- Presentation: 2D-first with strong authored transitions, impossible spatial staging, and non-photoreal rendering
+- Presentation: pure 2D first, with strong authored transitions, impossible spatial staging, and non-photoreal rendering
 
 ### Scope Policy
 - See `playtime-and-scope.md` for the current duration target and anti-filler rules.

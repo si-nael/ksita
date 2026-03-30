@@ -6,6 +6,8 @@ Lock a render and art-direction policy that fits the Hollow's appeal without dri
 ## Core Decision
 The Hollow should be 2D-first, non-photoreal, silhouette-driven, and emotionally stylized.
 
+For the prototype and early production, treat this as pure 2D, not 2.5D.
+
 Pixel, painted pastel, or mixed 2D approaches are all acceptable.
 Photoreal or strongly volumetric 3D should be avoided unless the result is so distinct that it could not be mistaken for a normal anime game or fantasy action title.
 
@@ -49,6 +51,9 @@ Best for:
 
 ### Restricted Lane
 3D or 2.5D is only acceptable if it is aggressively flattened, stylized, and spatially strange.
+
+Production rule:
+do not use this lane for the first playable or early content production.
 
 Requirements if used:
 - no realistic materials or skin rendering
@@ -114,3 +119,5 @@ The world should feel pastel enough to be seductive, but never sugary. Black dep
 
 ## Design Rule
 If the Hollow looks technically impressive but less memorable than a still frame of its characters, the visual direction is wrong.
+
+If 3D complexity slows iteration or weakens route readability, reject it immediately and stay in pure 2D.

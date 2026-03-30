@@ -1,0 +1,289 @@
+[gd_scene load_steps=17 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/vigil_span_slice.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/player/PlayerLune.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/props/RelayLantern.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/route/WitnessSource.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/route/WitnessRouteSegment.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/route/HoldPoint.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/setpieces/ReturnConflictController.tscn" id="7"]
+[ext_resource type="Script" path="res://scripts/state/slice_state.gd" id="8"]
+[ext_resource type="Script" path="res://scripts/audio/music_director.gd" id="9"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(330, 150)
+
+[sub_resource type="CircleShape2D" id="2"]
+radius = 86.0
+
+[sub_resource type="CircleShape2D" id="3"]
+radius = 46.0
+
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(120, 160)
+
+[sub_resource type="CircleShape2D" id="5"]
+radius = 68.0
+
+[node name="VigilSpanSlice" type="Node2D"]
+script = ExtResource("1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-32, 72)
+enabled = true
+
+[node name="Backdrop" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-900, -500, 900, -500, 900, 500, -900, 500)
+color = Color(0.06, 0.08, 0.13, 1)
+
+[node name="SeaBand" type="Polygon2D" parent="."]
+position = Vector2(0, -220)
+polygon = PackedVector2Array(-900, -40, 900, -70, 900, 70, -900, 40)
+color = Color(0.07, 0.16, 0.24, 0.95)
+
+[node name="LastStair" type="Line2D" parent="."]
+width = 12.0
+default_color = Color(0.86, 0.88, 0.93, 0.55)
+points = PackedVector2Array(-540, -300, -420, -250, -300, -200, -180, -150, -60, -100, 60, -50)
+
+[node name="LandingGeometry" type="Node2D" parent="."]
+
+[node name="StartPier" type="Polygon2D" parent="LandingGeometry"]
+position = Vector2(-420, 120)
+polygon = PackedVector2Array(-110, -44, 110, -44, 138, 0, 110, 44, -110, 44, -138, 0)
+color = Color(0.18, 0.25, 0.36, 0.9)
+
+[node name="CentralSpan" type="Polygon2D" parent="LandingGeometry"]
+position = Vector2(-20, 120)
+polygon = PackedVector2Array(-260, -20, 260, -20, 300, 0, 260, 20, -260, 20, -300, 0)
+color = Color(0.22, 0.31, 0.44, 0.9)
+
+[node name="RouteGlow" type="Line2D" parent="LandingGeometry"]
+position = Vector2(-12, 120)
+width = 16.0
+default_color = Color(0.60, 0.79, 0.98, 0.26)
+points = PackedVector2Array(-420, 0, 0, 0, 310, -150)
+
+[node name="IriPier" type="Polygon2D" parent="LandingGeometry"]
+position = Vector2(-170, 20)
+polygon = PackedVector2Array(-82, -34, 82, -34, 96, 0, 82, 34, -82, 34, -96, 0)
+color = Color(0.21, 0.29, 0.42, 0.92)
+
+[node name="IriMarker" type="Label" parent="LandingGeometry"]
+position = Vector2(-218, -48)
+text = "Iri Platform"
+
+[node name="NaoLedge" type="Polygon2D" parent="LandingGeometry"]
+position = Vector2(320, -32)
+polygon = PackedVector2Array(-98, -28, 98, -28, 120, 0, 98, 28, -98, 28, -120, 0)
+color = Color(0.31, 0.22, 0.39, 0.92)
+
+[node name="NaoMarker" type="Label" parent="LandingGeometry"]
+position = Vector2(258, -94)
+text = "Wrong Light"
+
+[node name="SeraPier" type="Polygon2D" parent="LandingGeometry"]
+position = Vector2(360, 118)
+polygon = PackedVector2Array(-78, -26, 78, -26, 90, 0, 78, 26, -78, 26, -90, 0)
+color = Color(0.19, 0.27, 0.39, 0.92)
+
+[node name="StartMarker" type="Label" parent="LandingGeometry"]
+position = Vector2(-506, 60)
+text = "Start"
+
+[node name="HoldMarker" type="Label" parent="LandingGeometry"]
+position = Vector2(-24, 70)
+text = "Main Hold"
+
+[node name="PlayerLune" parent="." instance=ExtResource("2")]
+position = Vector2(-420, 120)
+
+[node name="RelayLantern" parent="." instance=ExtResource("3")]
+position = Vector2(-420, 120)
+
+[node name="WitnessSources" type="Node2D" parent="."]
+
+[node name="LawfulBellEye" parent="WitnessSources" instance=ExtResource("4")]
+position = Vector2(-170, 40)
+cadence_name = "lawful"
+cue_color = Color(0.76, 0.9, 1, 0.85)
+
+[node name="FalseCallSource" parent="WitnessSources" instance=ExtResource("4")]
+position = Vector2(260, -10)
+witness_kind = 1
+source_strength = 1.15
+cadence_name = "backcall"
+cue_color = Color(0.93, 0.57, 0.85, 0.85)
+
+[node name="RouteSegments" type="Node2D" parent="."]
+
+[node name="MainBridge" parent="RouteSegments" instance=ExtResource("5")]
+position = Vector2(-20, 120)
+scale = Vector2(1.8, 1)
+segment_name = "Main Span"
+
+[node name="SideBridge" parent="RouteSegments" instance=ExtResource("5")]
+position = Vector2(245, 35)
+rotation = -0.42
+segment_name = "Nao Ledge Route"
+
+[node name="HoldPoints" type="Node2D" parent="."]
+
+[node name="MainHold" parent="HoldPoints" instance=ExtResource("6")]
+position = Vector2(18, 120)
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="Iri" type="Node2D" parent="Characters"]
+position = Vector2(-170, 20)
+
+[node name="Visual" type="Polygon2D" parent="Characters/Iri"]
+polygon = PackedVector2Array(-10, -12, 10, -12, 8, 16, -8, 16)
+color = Color(0.83, 0.92, 1, 1)
+
+[node name="Label" type="Label" parent="Characters/Iri"]
+position = Vector2(-12, -34)
+text = "Iri"
+
+[node name="Nao" type="Node2D" parent="Characters"]
+position = Vector2(260, -50)
+
+[node name="Visual" type="Polygon2D" parent="Characters/Nao"]
+polygon = PackedVector2Array(-10, -12, 10, -12, 8, 16, -8, 16)
+color = Color(0.95, 0.62, 0.88, 1)
+
+[node name="Label" type="Label" parent="Characters/Nao"]
+position = Vector2(-16, -34)
+text = "Nao"
+
+[node name="Yun" type="Node2D" parent="Characters"]
+position = Vector2(88, 46)
+
+[node name="Visual" type="Polygon2D" parent="Characters/Yun"]
+polygon = PackedVector2Array(-10, -12, 10, -12, 8, 16, -8, 16)
+color = Color(0.98, 0.87, 0.62, 1)
+
+[node name="Label" type="Label" parent="Characters/Yun"]
+position = Vector2(-14, -34)
+text = "Yun"
+
+[node name="Sera" type="Node2D" parent="Characters"]
+position = Vector2(360, 118)
+
+[node name="Visual" type="Polygon2D" parent="Characters/Sera"]
+polygon = PackedVector2Array(-10, -12, 10, -12, 8, 16, -8, 16)
+color = Color(0.72, 0.82, 0.93, 1)
+
+[node name="Label" type="Label" parent="Characters/Sera"]
+position = Vector2(-14, -34)
+text = "Sera"
+
+[node name="SetpieceDirector" parent="." instance=ExtResource("7")]
+player_path = NodePath("../PlayerLune")
+slice_state_path = NodePath("../SliceState")
+audio_director_path = NodePath("../AudioDirector")
+lawful_threshold_x = -60.0
+wrong_threshold_x = 60.0
+
+[node name="SliceState" type="Node" parent="."]
+script = ExtResource("8")
+
+[node name="AudioDirector" type="Node" parent="."]
+script = ExtResource("9")
+
+[node name="Zones" type="Node2D" parent="."]
+
+[node name="BlindWard" type="Area2D" parent="Zones"]
+position = Vector2(-10, 120)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zones/BlindWard"]
+shape = SubResource("1")
+
+[node name="Visual" type="Polygon2D" parent="Zones/BlindWard"]
+polygon = PackedVector2Array(-95, -65, 95, -65, 95, 65, -95, 65)
+color = Color(0.52, 0.56, 0.71, 0.08)
+
+[node name="FalseField" type="Area2D" parent="Zones"]
+position = Vector2(250, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zones/FalseField"]
+shape = SubResource("2")
+
+[node name="Visual" type="Polygon2D" parent="Zones/FalseField"]
+polygon = PackedVector2Array(0, -86, 61, -61, 86, 0, 61, 61, 0, 86, -61, 61, -86, 0, -61, -61)
+color = Color(0.92, 0.55, 0.84, 0.09)
+
+[node name="MisarrivalPocket" type="Area2D" parent="Zones"]
+position = Vector2(372, -38)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zones/MisarrivalPocket"]
+shape = SubResource("3")
+
+[node name="Visual" type="Polygon2D" parent="Zones/MisarrivalPocket"]
+polygon = PackedVector2Array(0, -46, 32, -32, 46, 0, 32, 32, 0, 46, -32, 32, -46, 0, -32, -32)
+color = Color(0.96, 0.78, 0.91, 0.12)
+
+[node name="SetpieceTrigger" type="Area2D" parent="Zones"]
+position = Vector2(105, 118)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zones/SetpieceTrigger"]
+shape = SubResource("4")
+
+[node name="Visual" type="Polygon2D" parent="Zones/SetpieceTrigger"]
+polygon = PackedVector2Array(-60, -80, 60, -80, 60, 80, -60, 80)
+color = Color(0.96, 0.82, 0.48, 0.05)
+
+[node name="ReturnGoal" type="Area2D" parent="Zones"]
+position = Vector2(-430, 120)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zones/ReturnGoal"]
+shape = SubResource("5")
+
+[node name="Visual" type="Polygon2D" parent="Zones/ReturnGoal"]
+polygon = PackedVector2Array(0, -68, 48, -48, 68, 0, 48, 48, 0, 68, -48, 48, -68, 0, -48, -48)
+color = Color(0.76, 0.92, 1, 0.06)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="PanelContainer" parent="UI"]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 470.0
+offset_bottom = 278.0
+
+[node name="StatusLabel" type="Label" parent="UI/HUD"]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 420.0
+offset_bottom = 82.0
+text = "Status"
+
+[node name="ObjectiveLabel" type="Label" parent="UI/HUD"]
+offset_left = 16.0
+offset_top = 82.0
+offset_right = 420.0
+offset_bottom = 110.0
+text = "Objective"
+
+[node name="RouteLabel" type="Label" parent="UI/HUD"]
+offset_left = 16.0
+offset_top = 114.0
+offset_right = 420.0
+offset_bottom = 140.0
+text = "Route"
+
+[node name="HintLabel" type="Label" parent="UI/HUD"]
+offset_left = 16.0
+offset_top = 148.0
+offset_right = 420.0
+offset_bottom = 208.0
+text = "Hint"
+autowrap_mode = 3
+
+[node name="ControlsLabel" type="Label" parent="UI/HUD"]
+offset_left = 16.0
+offset_top = 218.0
+offset_right = 430.0
+offset_bottom = 268.0
+text = "WASD Move | Shift Quick-Step | RMB Focus | Q Answer | E Knot | F Cut | Space Call"
+autowrap_mode = 3
