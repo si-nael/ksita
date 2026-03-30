@@ -1,0 +1,40 @@
+# Changelog
+
+## 2026-03-30
+- Created a dedicated documentation structure under `docs/plans` and `docs/logs`.
+- Wrote the initial master plan for an original emotionally intense narrative game under the working title Project Glass Choir.
+- Defined the first vertical slice goal, scope, and success criteria.
+- Created an open-questions list to keep unresolved decisions visible instead of burying them in ad hoc notes.
+- Reframed the project around an original city-scale world built from filed memory rather than a more familiar school-and-trial structure.
+- Added a world foundation document to make world law and world-versus-character pressure explicit.
+- Added a creative boundaries document to prevent drift toward obvious structural imitation.
+- Pivoted the setting from modern civic fantasy toward mythic fantasy built on true names, reliquaries, and sacred world law.
+- Added a relationship principles document to enforce stranger, more dangerous core bonds.
+- Added a quality bar document to convert the "legendary masterpiece" ambition into concrete standards.
+- Added a world-options document with five candidate settings so world selection can happen before story selection.
+- Marked the current world foundation and master plan as provisional until one option is chosen.
+- Locked the active world direction to the Hollow: a void whose physics are independent of time.
+- Replaced the previous candidate world foundation with a selected-world foundation centered on relation, witness, and achronal physics.
+- Paused the previous vertical slice plan because it depended on a rejected world draft.
+- Added a dedicated travel-and-distance document defining relational movement, route authorities, and failure states in the Hollow.
+- Chose Witness as the dominant route authority for the first prototype area and defined the Vigil Span as the baseline prototype space.
+- Added a dedicated witness-feedback document defining diegetic-first travel readability and the four witness states: Held True, Thinning, Held Wrong, and Lost.
+- Added the Common Vigil as the core public witness institution that keeps people and routes legally and physically real.
+- Added subculture-facing tone and character-appeal documents to shift the project away from classical or essay-like fantasy presentation.
+- Reframed the Common Vigil and master plan so the world produces stronger role appeal, visual identity, and character obsession.
+- Defined Sequence as the Five Turns of Facing, Carrying, Knotting, Returning, and Veiling, with role-based ritual appeal instead of abstract timekeeping.
+- Added illegal witness as Counterwitness or Keeping, giving the Hollow a forbidden intimacy system outside Common Vigil sanction.
+- Added death and disanchoring rules, including the states from Marked to Unkept and the idea of Afterkeep.
+- Locked witness as both local traversal state and broader narrative standing.
+- Chose Returning as the first major character-conflict Turn.
+- Added the first role cluster around Returning: Return Singer, Backcaller, Twice-Called, Lantern Runner, and Turner.
+- Added the first named cast seeds: Iri, Nao, Yun, Lune, and Sera.
+- Added a visual-direction policy that allows pixel or pastel 2D approaches but rejects generic realistic or 3D presentation.
+- Added the Keeping subculture look and strata, clarifying how illegal witness should feel as a scene rather than just a rule.
+- Chose Lune as the first POV anchor and defined the first arc as seductive-tragic with an opening-sequence direction.
+- Added a playtime-and-scope policy that treats 80 hours as a completionist target rather than an 80-hour linear main route.
+- Added a gameplay-identity document and reopened the vertical-slice plan around active route reading, misarrival, and anti-visual-novel requirements.
+- Added a unified game-systems architecture that defines the core loop, encounter shapes, progression, fail-forward rules, and fun-first bar.
+- Added emotional-targets.md to translate reference feelings into Hollow-specific targets for music-gameplay catharsis, long-form tragedy, and elegant recontextualization.
+- Added control-and-slice.md to lock the first real-time control format, Relay Lantern mechanic, Frayed Bell Thread reward, and 20-minute slice flow.
+- Added prototype-tuning.md, yun-first-wrong-home-setpiece.md, and godot-prototype-structure.md so the first slice can move toward actual implementation.
